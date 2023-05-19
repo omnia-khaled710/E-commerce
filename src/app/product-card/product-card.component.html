@@ -1,0 +1,46 @@
+<div class="row">
+  <div *ngFor="let product of products" class="col-md-4 my-3">
+    <div class="card" style="width: 18rem">
+      <img
+        class="card-img-top w-100 h-100"
+        [src]="product.thumbnail"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title | seeMore : 10 }}</h5>
+        <p class="card-text">
+          Description:{{ product.description | seeMore : 40 }}
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Price : {{ product.price | currency : "EGP" }}
+        </li>
+        <li
+          [ngStyle]="{ color: product.stock > 0 ? 'green' : 'red' }"
+          class="list-group-item"
+        >
+          Stock : {{ product.stock }}
+        </li>
+        <li class="list-group-item">
+          CreatedAt : {{ product.createdAt | date : "MMMM YYYY" }}
+        </li>
+      </ul>
+      <div class="card-body">
+        <a [routerLink]="['/product', product.id]" class="card-link"
+          >Show Detailes</a
+        >
+        <button class="btn btn-success">
+          <a href="#" class="card-link" (click)="increaseCounter()"
+            >Add to cart</a
+          ><br />
+        </button>
+        <!-- <button class="btn btn-danger">
+          <a href="#" class="card-link" (click)="decreaseCounter()"
+            >Remove from cart</a
+          ><br />
+        </button> -->
+      </div>
+    </div>
+  </div>
+</div>

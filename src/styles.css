@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/* You can add global styles to this file, and also import other style files */
+
+/* @import "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap"; */
+
+
+
+body{
+    background-color: #1b1c1e;
+    color: #fff;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+a{
+    font-size: 18px;
+    color: tomato;
+    text-decoration: none;
+}
+a:hover{
+    font-size: 18px;
+    color:hotpink;
+    text-decoration: none;
+}
+.navbar-nav {
+    --bs-nav-link-color: none
+}
+.navbar-nav :hover{
+    --bs-nav-link-hover-color: #fff
+}
